@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        textView = binding.test
-        textView.text = "View DataBinding Test"
         Log.v("tag", "Verbose")
         binding.button.setOnClickListener {
             Snackbar.make(this, binding.root, "Snackbar text", Snackbar.LENGTH_SHORT).show()

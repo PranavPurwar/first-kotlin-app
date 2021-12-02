@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">kotlin app</string>
     <string name="kotlin_incremental_compilation_test">Kotlin Incremental Compilation Test!</string>
-    <string name="button_that_toasts">A Button that Toasts!</string>
 </resources>
