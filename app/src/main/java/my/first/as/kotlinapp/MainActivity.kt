@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
         textView = binding.test
         textView.text = "View DataBinding Test"
         Log.v("tag", "Verbose")
-        Toast.makeText(this, "Toast Example In Kotlin", Toast.LENGTH_SHORT).show()
+        binding.button.setOnClickListener {
+            Toast.makeText(this, "Toast Example In Kotlin", Toast.LENGTH_SHORT).show()
+        }
     }
 }
