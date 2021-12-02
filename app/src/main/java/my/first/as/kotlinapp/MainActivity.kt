@@ -6,6 +6,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import my.first.`as`.kotlinapp.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     lateinit var textView: TextView
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         textView.text = "View DataBinding Test"
         Log.v("tag", "Verbose")
         binding.button.setOnClickListener {
-            Toast.makeText(this, "Toast Example In Kotlin", Toast.LENGTH_SHORT).show()
+            Snackbar.make(this, binding.root, "Snackbar text", Snackbar.LENGTH_SHORT).show()
         }
     }
 }
