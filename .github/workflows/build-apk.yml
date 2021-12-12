@@ -5,7 +5,7 @@ on:
   push:
 jobs:
   build:
-    runs-on: windows-2022
+    runs-on: macos-11
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
