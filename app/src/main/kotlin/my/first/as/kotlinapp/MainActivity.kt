@@ -22,13 +22,15 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(this, binding.root, "Run dx", Snackbar.LENGTH_SHORT)
                 .setAction("Button", {
                     Toast.makeText(this, "Starting", Snackbar.LENGTH_LONG).show()
-                    val tasks: Array<Task> = arrayOf(
-                        DexTask("/storage/emulated/0/classesTest.jar")
-                    )
-                    for (task in tasks) {
+                    throw RuntimeException("Test Crash")
+//                    val tasks: Array<Task> = arrayOf(
+//                        val task: DexTask = DexTask("/storage/emulated/0/classesTest.jar")
+//                        task.doFullTask();
+//                    )
+//                    for (task in tasks) {
                         Toast.makeText(this, "Task name: " + task.getTaskName(), Toast.LENGTH_SHORT).show()
-                        task.doFullTask();
-                    }
+//                        task.doFullTask();
+//                    }
                 }).show()
                 
         }
