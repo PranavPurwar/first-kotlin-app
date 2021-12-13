@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 //                        task.doFullTask();
 //                    )
 //                    for (task in tasks) {
-                        Toast.makeText(this, "Task name: " + task.getTaskName(), Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(this, "Task name: " + task.getTaskName(), Toast.LENGTH_SHORT).show()
 //                        task.doFullTask();
 //                    }
                 }).show()
