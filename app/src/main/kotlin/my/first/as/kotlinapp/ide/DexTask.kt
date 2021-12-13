@@ -5,6 +5,7 @@ import com.pranav.ide.dx.command.dexer.Main
 import java.io.File
 import java.util.List
 import java.lang.reflect.Method
+import java.util.Arrays
 
 class DexTask {
 
@@ -19,7 +20,7 @@ fun doFullTask() {
 		)
 		Main.clearInternTables()
 		val arguments: Main.Arguments = Main.Arguments()
-		parseMethod: Method = (Main.Arguments::class).getDeclaredMethod("parse", String::class[])
+		var parseMethod: Method = (Main.Arguments::class).getDeclaredMethod("parse", String::class[])
 		parseMethod.isAccessible = true
 		parseMethod.invoke(arguments, (Object) args.toArray(String[0]))
 		Main.run(arguments)
