@@ -31,3 +31,5 @@ jobs:
       with:
         name: apk-debug
         path: app/build/outputs/apk
+    -name: Post cleanup
+     run: rm -rf app/build
