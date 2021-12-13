@@ -28,7 +28,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-
       - name: Upload debug apk
         uses: actions/upload-artifact@v2
         if: ${{ !github.head_ref }}
