@@ -7,20 +7,18 @@ import android.widget.Toast
 
 class ApplicationLoader: Application() {
 
-    var context: Context
-
-    override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(base)
-        context = base
+    companion object {
+        lateinit val context: ApplicationLoader
     }
-    
+
     override fun onCreate() {
+        super.onCreate()
+        context = this
         Thread.setDefaultUncaughtExceptionHandler(Thread.UncaughtExceptionHandler() {
-			override fun uncaughtException(thread: Thread, throwable: Throwable) {
-                Toast.makeText(context, Log.getStackTraceString(throwable), Toast.LENGTH_SHORT).show()
+			fun uncaughtException(thread: Thread, throwable: Throwable) {
+                Toast.makeText(this, Log.getStackTraceString(throwable), Toast.LENGTH_SHORT).show()
             }
         })
-        super.onCreate()
     }
     
     fun getContext(): Context {
