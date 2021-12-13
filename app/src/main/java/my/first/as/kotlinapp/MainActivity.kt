@@ -20,9 +20,7 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(this, binding.root, "Snackbar text", Snackbar.LENGTH_SHORT)
                 .setAction("Button", {
                     Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show()
-                }
-                )
-                .show()
+                }).show()
         }
     }
 }
