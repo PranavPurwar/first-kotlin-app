@@ -20,7 +20,7 @@ class DexTask {
 		)
 		Main.clearInternTables()
 		val arguments: Main.Arguments = Main.Arguments()
-		var parseMethod: Method = Main.Arguments::class.getDeclaredMethod("parse", String[].javaClass)
+		var parseMethod: Method = Main.Arguments::class.getDeclaredMethod("parse", Array<String>::class.java)
 		parseMethod.isAccessible = true
 		parseMethod.invoke(arguments, args.toTypedArray())
 		Main.run(arguments)
