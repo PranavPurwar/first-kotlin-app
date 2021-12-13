@@ -18,15 +18,16 @@ jobs:
       - name: Build the app
         run: ./gradlew assembleDebug
 
-      - name: Cache dependencies
+      - name: Cache gradle dependencies
         uses: actions/cache@v2
         with:
           path: |
-            ~/.gradle
-            ~/app
-            ~/cache
-            !~/cache/exclude
-        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
 
       - name: Upload debug apk
         uses: actions/upload-artifact@v2
