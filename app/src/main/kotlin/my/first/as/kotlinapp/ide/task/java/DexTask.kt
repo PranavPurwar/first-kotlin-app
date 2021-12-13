@@ -8,13 +8,7 @@ import java.io.File
 import kotlin.collections.List
 import java.lang.reflect.Method
 
-class DexTask: Task {
-
-    private String input;
-
-    fun DexTask(String input) {
-        this.input = input
-    }
+class DexTask(input: String): Task {
 
     override fun getTaskName(): String = "DexTask"
 
