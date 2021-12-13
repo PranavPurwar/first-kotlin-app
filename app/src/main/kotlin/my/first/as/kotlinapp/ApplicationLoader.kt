@@ -16,7 +16,7 @@ class ApplicationLoader: Application() {
     
     override fun onCreate() {
         Thread.setDefaultUncaughtExceptionHandler(Thread.UncaughtExceptionHandler() {
-			override fun uncaughtException(Thread thread, Throwable throwable) {
+			override fun uncaughtException(thread: Thread, throwable: Throwable) {
                 Toast.makeText(context, Log.getStackTraceString(throwable), Toast.LENGTH_SHORT).show()
             }
         })
