@@ -20,7 +20,7 @@ fun doFullTask() {
 		)
 		Main.clearInternTables()
 		val arguments: Main.Arguments = Main.Arguments()
-		var parseMethod: Method = (Main.Arguments::class).getDeclaredMethod("parse", Array<String::class>::class)
+		var parseMethod: Method = (Main.Arguments::class).getDeclaredMethod("parse", String::class[])
 		parseMethod.isAccessible = true
 		parseMethod.invoke(arguments, args.toTypedArray())
 		Main.run(arguments)
