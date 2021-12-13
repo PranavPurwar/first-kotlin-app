@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             Snackbar.make(this, binding.root, "Snackbar text", Snackbar.LENGTH_SHORT)
                 .setAction("Button", {
-                    Toast.makeText(this, "Clicked", Snackbar.LENGTH_INFEFINATE).show()
+                    Toast.makeText(this, "Clicked", Snackbar.LENGTH_IDFEFINATE).show()
                 }).show()
                 
         }
