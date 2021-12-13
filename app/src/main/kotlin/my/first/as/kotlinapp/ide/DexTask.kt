@@ -22,7 +22,7 @@ fun doFullTask() {
 		val arguments: Main.Arguments = Main.Arguments()
 		var parseMethod: Method = (Main.Arguments::class).getDeclaredMethod("parse", String::class[])
 		parseMethod.isAccessible = true
-		parseMethod.invoke(arguments, (Object) args.toArray(String([0])))
+		parseMethod.invoke(arguments, args.toTypedArray())
 		Main.run(arguments)
 }
 
