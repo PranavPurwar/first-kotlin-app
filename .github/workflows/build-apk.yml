@@ -18,6 +18,16 @@ jobs:
       - name: Build the app
         run: ./gradlew assembleDebug
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle
+            ~/app
+            ~/cache
+            !~/cache/exclude
+        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+
       - name: Upload debug apk
         uses: actions/upload-artifact@v2
         if: ${{ !github.head_ref }}
