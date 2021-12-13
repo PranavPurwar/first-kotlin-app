@@ -31,7 +31,7 @@ class DexTask: Task {
         val arguments: Main.Arguments = Main.Arguments()
         val parseMethod: Method = Main.Arguments::class.java.getDeclaredMethod("parse", Array<String>::class.java)
         parseMethod.isAccessible = true
-        parseMethod.invoke(arguments, args.toTypedArray())
+        parseMethod.invoke(arguments, args)
         Main.run(arguments)
     }
 
