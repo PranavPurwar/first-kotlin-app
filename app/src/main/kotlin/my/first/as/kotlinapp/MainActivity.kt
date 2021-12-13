@@ -25,12 +25,9 @@ class MainActivity : AppCompatActivity() {
                     val tasks: Array<Task> = arrayOf(
                         DexTask("/storage/emulated/0/classesTest.jar")
                     )
-                    for (Task task : tasks) {
+                    for (Task task in tasks) {
                         Toast.makeText(this, "Task name: " + task.getTaskName(), Toast.LENGTH_SHORT).show()
-                        runTask()
-                        suspend fun runTask() {
                         task.doFullTask();
-                        }
                     }
                 }).show()
                 

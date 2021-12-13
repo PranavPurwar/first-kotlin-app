@@ -1,9 +1,9 @@
 package my.first.`as`.kotlinapp.ide
 
-open class Task {
+abstract class Task {
     
-    open fun getTaskName(): String
+    abstract fun getTaskName(): String
 
 
-    open fun doFullTask()
+    abstract fun doFullTask()
 }
