@@ -9,7 +9,7 @@ import java.util.Arrays
 
 class DexTask {
 
-fun doFullTask() {
+    fun doFullTask() {
         val f = File("/storage/emulated/0/classesTest.jar")
 		val args = Arrays.asList(
 		"--debug",
@@ -20,10 +20,10 @@ fun doFullTask() {
 		)
 		Main.clearInternTables()
 		val arguments: Main.Arguments = Main.Arguments()
-		var parseMethod: Method = (Main.Arguments::class).getDeclaredMethod("parse", String::class[])
+		var parseMethod: Method = Main.Arguments::class.getDeclaredMethod("parse", String::class[])
 		parseMethod.isAccessible = true
 		parseMethod.invoke(arguments, args.toTypedArray())
 		Main.run(arguments)
-}
+    }
 
 }
