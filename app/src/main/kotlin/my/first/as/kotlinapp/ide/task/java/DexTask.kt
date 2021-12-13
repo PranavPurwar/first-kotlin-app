@@ -10,7 +10,7 @@ import java.lang.reflect.Method
 
 class DexTask: Task {
 
-    private input: String
+    private val input: String
 
     constructor(path: String) {
         input = path

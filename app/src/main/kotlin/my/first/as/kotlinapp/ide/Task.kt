@@ -5,5 +5,5 @@ open class Task {
     open fun getTaskName(): String
 
 
-    open fun doFullTask(): Boolean
+    open fun doFullTask()
 }
