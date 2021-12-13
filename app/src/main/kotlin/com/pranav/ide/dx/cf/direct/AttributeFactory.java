@@ -25,6 +25,8 @@ import com.pranav.ide.dx.rop.cst.CstString;
 import com.pranav.ide.dx.util.ByteArray;
 import com.pranav.ide.dx.util.Hex;
 
+import java.util.Objects;
+
 /**
  * Factory capable of instantiating various {@link com.pranav.ide.dx.cf.iface.Attribute} subclasses
  * depending on the context and name.
@@ -68,9 +70,7 @@ public class AttributeFactory {
      */
     public final com.pranav.ide.dx.cf.iface.Attribute parse(DirectClassFile cf, int context, int offset,
                                                               com.pranav.ide.dx.cf.iface.ParseObserver observer) {
-        if (cf == null) {
-            throw new NullPointerException("cf == null");
-        }
+        Objects.requireNonNull(cf);
 
         if ((context < 0) || (context >= CTX_COUNT)) {
             throw new IllegalArgumentException("bad context");

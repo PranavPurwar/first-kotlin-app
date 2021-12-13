@@ -3,12 +3,13 @@ package my.first.`as`.kotlinapp.ide
 import com.pranav.ide.dx.command.dexer.Main
 
 import java.io.File
-import java.util.List
+import kotlin.collections.List
 import java.lang.reflect.Method
 import java.util.Arrays
 
 class DexTask {
 
+    fun getTaskName(): String = "DexTask"
     fun doFullTask() {
         val f = File("/storage/emulated/0/classesTest.jar")
 		val args = Arrays.asList(
