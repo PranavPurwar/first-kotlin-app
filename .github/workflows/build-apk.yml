@@ -16,7 +16,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build the app
-        run: gradlew assembleDebug
+        run: ./gradlew assembleDebug
 
 #      - name: Cache gradle dependencies
 #        uses: actions/cache@v2
