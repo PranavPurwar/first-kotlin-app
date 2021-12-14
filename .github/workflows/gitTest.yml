@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Grant exec perm
+      run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
     - name: Run git
