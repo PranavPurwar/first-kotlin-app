@@ -1,0 +1,21 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build with Gradle
+      run: ./gradlew build
+    - name: Run git
+      run: git add --all
+      run: git commit -m "ok"
+      run: git push
