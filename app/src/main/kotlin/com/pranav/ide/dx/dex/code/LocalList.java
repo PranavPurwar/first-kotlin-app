@@ -569,7 +569,7 @@ public final class LocalList extends FixedSizeList {
          * @param startedLocal {@code non-null;} spec representing the
          * started local
          */
-        public void startLocal(int address, RegisterSpec startedLocal) {
+        public void startLocal(int address, com.pranav.ide.dx.rop.code.RegisterSpec startedLocal) {
             if (DEBUG) {
                 System.err.printf("%04x start %s\n", address, startedLocal);
             }

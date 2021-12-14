@@ -33,7 +33,6 @@ import com.pranav.ide.dx.rop.type.Type;
 import com.pranav.ide.dx.util.Hex;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * Class which knows how to simulate the effects of executing bytecode.
@@ -77,11 +76,17 @@ public class Simulator {
      * @param dexOptions {@code non-null;} options for dex output
      */
     public Simulator(Machine machine, ConcreteMethod method, DexOptions dexOptions) {
-        Objects.requireNonNull(machine);
+        if (machine == null) {
+            throw new NullPointerException("machine == null");
+        }
 
-        Objects.requireNonNull(method);
-        
-        Objects.requireNonNull(dexOptions);
+        if (method == null) {
+            throw new NullPointerException("method == null");
+        }
+
+        if (dexOptions == null) {
+            throw new NullPointerException("dexOptions == null");
+        }
 
         this.machine = machine;
         this.code = method.getCode();
@@ -240,7 +245,9 @@ public class Simulator {
          * @param frame {@code non-null;} the frame
          */
         public void setFrame(Frame frame) {
-            Objects.requireNonNull(frame);
+            if (frame == null) {
+                throw new NullPointerException("frame == null");
+            }
 
             this.frame = frame;
         }

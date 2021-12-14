@@ -65,7 +65,7 @@ public class OptimizerOptions {
              * We shouldn't get this far. The condition should have
              * been caught in the arg processor.
              */
-            throw new IllegalStateException("optimize and don't optimize lists "
+            throw new RuntimeException("optimize and don't optimize lists "
                     + " are mutually exclusive.");
         }
 
@@ -102,8 +102,8 @@ public class OptimizerOptions {
 
             fr.close();
         } catch (IOException ex) {
-            // Let the exception percolate up as a IllegalStateException.
-            throw new IllegalStateException("Error with optimize list: " +
+            // Let the exception percolate up as a RuntimeException.
+            throw new RuntimeException("Error with optimize list: " +
                     filename, ex);
         }
 

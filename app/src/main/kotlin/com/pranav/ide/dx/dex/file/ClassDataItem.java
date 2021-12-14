@@ -29,7 +29,6 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Objects;
 
 /**
  * Representation of all the parts of a Dalvik class that are generally
@@ -75,7 +74,9 @@ public final class ClassDataItem extends OffsettedItem {
     public ClassDataItem(CstType thisClass) {
         super(1, -1);
 
-        Objects.requireNonNull(thisClass);
+        if (thisClass == null) {
+            throw new NullPointerException("thisClass == null");
+        }
 
         this.thisClass = thisClass;
         this.staticFields = new ArrayList<com.pranav.ide.dx.dex.file.EncodedField>(20);
@@ -116,7 +117,9 @@ public final class ClassDataItem extends OffsettedItem {
      * @param value {@code null-ok;} initial value for the field, if any
      */
     public void addStaticField(com.pranav.ide.dx.dex.file.EncodedField field, Constant value) {
-        Objects.requireNonNull(field);
+        if (field == null) {
+            throw new NullPointerException("field == null");
+        }
 
         if (staticValuesConstant != null) {
             throw new UnsupportedOperationException(
@@ -133,7 +136,9 @@ public final class ClassDataItem extends OffsettedItem {
      * @param field {@code non-null;} the field to add
      */
     public void addInstanceField(com.pranav.ide.dx.dex.file.EncodedField field) {
-        Objects.requireNonNull(field);
+        if (field == null) {
+            throw new NullPointerException("field == null");
+        }
 
         instanceFields.add(field);
     }
@@ -144,7 +149,9 @@ public final class ClassDataItem extends OffsettedItem {
      * @param method {@code non-null;} the method to add
      */
     public void addDirectMethod(com.pranav.ide.dx.dex.file.EncodedMethod method) {
-        Objects.requireNonNull(method);
+        if (method == null) {
+            throw new NullPointerException("method == null");
+        }
 
         directMethods.add(method);
     }
@@ -155,7 +162,9 @@ public final class ClassDataItem extends OffsettedItem {
      * @param method {@code non-null;} the method to add
      */
     public void addVirtualMethod(com.pranav.ide.dx.dex.file.EncodedMethod method) {
-        Objects.requireNonNull(method);
+        if (method == null) {
+            throw new NullPointerException("method == null");
+        }
 
         virtualMethods.add(method);
     }
