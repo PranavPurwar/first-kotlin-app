@@ -21,18 +21,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         Log.v("tag", "Verbose")
         binding.button.setOnClickListener {
-            Snackbar.make(this, binding.root, "Run dx", Snackbar.LENGTH_SHORT)
+            Snackbar.make(this, binding.root, "Run dx", Snackbar.LENGTH_INDEFINITE)
                 .setAction("Button", {
-                    Toast.makeText(this, "Starting", Snackbar.LENGTH_LONG).show()
-                    throw RuntimeException("Test Crash")
-                    val tasks: Array<Task> = arrayOf(
-                        val task: DexTask = DexTask("/storage/emulated/0/classesTest.jar")
-                        task.doFullTask();
-                    )
-                    for (task in tasks) {
-                        Toast.makeText(this, "Task name: " + task.getTaskName(), Toast.LENGTH_SHORT).show()
-                        task.doFullTask();
-                    }
+                    Toast.makeText(this, "Starting", Toast.LENGTH_LONG).show()
+                    val task: DexTask = DexTask("/storage/emulated/0/classesTest.jar")
+                    Toast.makeText(this, task.getTaskName(), Toast.LENGTH_LONG).show()
+                    task.doFullTask();
                 }).show()
                 
         }
