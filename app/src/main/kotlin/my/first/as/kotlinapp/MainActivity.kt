@@ -18,16 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val crashButton = Button(this)
-        crashButton.text = "Test Crash"
-        crashButton.setOnClickListener {
-            throw RuntimeException("Test Crash") // Force a crash
-        }
-
-       addContentView(crashButton, ViewGroup.LayoutParams(
-           ViewGroup.LayoutParams.MATCH_PARENT,
-           ViewGroup.LayoutParams.WRAP_CONTENT))
-/*        setContentView(binding.root)
+        setContentView(binding.root)
         Log.v("tag", "Verbose")
         binding.button.setOnClickListener {
             Snackbar.make(this, binding.root, "Run dx", Snackbar.LENGTH_SHORT)
@@ -45,5 +36,5 @@ class MainActivity : AppCompatActivity() {
                 }).show()
                 
         }
-*/    }
+    }
 }
