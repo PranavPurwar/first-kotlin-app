@@ -1,4 +1,4 @@
-name: Android CI
+name: GitTest
 
 on:
   workflow_run:
