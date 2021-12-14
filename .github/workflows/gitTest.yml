@@ -20,6 +20,10 @@ jobs:
       run: ./gradlew build
     - name: Run git
       run: git add --all
+    - name: Setup email
+      run: git config --global user.email "${{ secrets.email }}"
+    - name: Setup name
+      run: git config --global user.name "TestGit"
     - name: commit
       run: git commit -m "ok"
     - name: push
