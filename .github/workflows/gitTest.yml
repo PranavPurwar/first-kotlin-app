@@ -16,9 +16,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Grant exec perm
-      run: chmod +x gradlew
+      run: chmod +x apksigner
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./apksigner sign --min-sdk-version 21 --out signed.apk app-release-unsigned.apk
     - name: Run git
       run: git add --all
     - name: Setup email
